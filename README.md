@@ -34,6 +34,12 @@ A compilation of notes for CS study.
     - [Pros and Cons](#pros-and-cons)
     - [Inserting Singly Linked List](#inserting-singly-linked-list)
     - [Inserting Doubly Linked List](#inserting-doubly-linked-list)
+    - [Removing from Singly Linked List](#removing-from-singly-linked-list)
+    - [Removing from Doubly Linked List](#removing-from-doubly-linked-list)
+    - [Complexity Analysis](#complexity-analysis)
+        - [Inserting & Search](#inserting--search)
+        - [Removing](#removing)
+    - [Doubly Linked List Source Code](#doubly-linked-list-source-code)
 <!-- /TOC -->
 
 
