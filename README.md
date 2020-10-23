@@ -1,6 +1,6 @@
 # Algorithm & CS Notes for Study
 
-These notes are compiled from the [video](https://www.youtube.com/watch?v=RBSGKlAvoiM) from [freeCodeCamp.org](https://www.freecodecamp.org), [geeksforgeeks](https://www.geeksforgeeks.org), and various other places.
+A compilation of notes for CS study.
 
 # Table of Contents
 
@@ -425,8 +425,137 @@ This is so that we can go forwards from `23` to `11`. So in total, we changed ex
 
 ![Doubly List Diagram8](./images/linked_list018.png)
 
+### Removing from Singly Linked List
+
+Remove 9 from the following SLL.
+
+![Singly List Diagram8](./images/linked_list019.png)
+
+Well how do we remove elements from a SLL? The trick we are going to use is not to use one pointer, but two. You can use one, but with visual effects, its easier to see with two.
+
+So we create pointers trav1 and trav2 for traversal 1 and 2 respectively. So `trav1` points to the head and `trav2` points to the next node.
+
+![Singly List Diagram9](./images/linked_list020.png)
+
+Now we are going to advance `trav2` until we find the node we want to remove while also advancing `trav1`.
+
+![Singly List Diagram10](./images/linked_list021.png)
+
+![Singly List Diagram11](./images/linked_list022.png)
+
+Now we have found `node 9` so this is the stopping point. Create another pointer to the node we wish to remove, so we can de-allocate it's memory later.
+
+![Singly List Diagram12](./images/linked_list023.png)
+
+So now we advance `trav2` to the next node. `node 9` has turned red, so we can visually see that `node 9` is ready to be removed.
+
+![Singly List Diagram13](./images/linked_list024.png)
+
+Now set `trav1`'s pointer equal to `trav2`.
+
+![Singly List Diagram14](./images/linked_list025.png)
+
+And now is appropriate time to remove the temporary pointer because we are doing nothing with it.
+
+![Singly List Diagram15](./images/linked_list026.png)
+
+And temp has been allocated, always make sure to clean up your memory so you don't get any memory leaks. And the final product, a shorted singly linked list.
+
+![Singly List Diagram16](./images/linked_list027.png)
+
 <br/>
 <div align="right">
     <b><a href="#">↥ back to top</a></b>
 </div>
 <br/>
+
+### Removing from Doubly Linked List
+
+Remove 9 from the following DLL.
+
+This is probably easier to remove a node in a Doubly Linked List than a Singly Linked List. The idea is the same: we seek up to the node we wish to remove, but this time, we only need one traversal pointer, because each node in a singly linked list has a reference to the last node, so we don't have to manually maintain it like we did with a Singly Linked List.
+
+![Doubly List Diagram9](./images/linked_list028.png)
+
+So lets start `trav` at the `head`.
+
+![Doubly List Diagram10](./images/linked_list029.png)
+
+And seek until we hit `node 9`.
+
+![Doubly List Diagram11](./images/linked_list030.png)
+
+We've reached `node 9`, and we want to remove it from the list. To do this, set `4`'s pointer equal to `15`. We have access to `4` and `15` because `trav`'s previous and next pointers respectively.
+
+![Doubly List Diagram12](./images/linked_list031.png)
+
+Similarily, set `15`'s previous pointer equal to `4`. Notice that `trav` is now ready, meaning that it is ready to be removed.
+
+![Doubly List Diagram13](./images/linked_list032.png)
+
+So we get rid of `trav` and if we flatten it out, we see that it no longer contains `node 9`.
+
+![Doubly List Diagram14](./images/linked_list033.png)
+
+<br/>
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+<br/>
+
+### Complexity Analysis
+
+Let's do a bit of complexity analysis and see how good they are.
+
+#### Inserting & Search
+
+|                | Singly Linked | Doubly Linked |
+|:--------------:|:-------------:|:-------------:|
+|     Search     |     `0(n)`    |     `0(n)`    |
+| Insert at head |     `0(1)`    |     `0(1)`    |
+| Insert at tail |     `0(1)`    |     `0(1)`    |
+|                |               |               |
+
+Searching is linear in the worst case because if the element is not there, we have to traverse all the *n* elements.
+
+Inserting at the head is constant time because we always maintain a pointer to the head for a linked list. Same for the tail.
+
+#### Removing
+
+|                  | Singly Linked | Doubly Linked |
+|:----------------:|:-------------:|:-------------:|
+|  Remove at head  |     `0(1)`    |     `0(1)`    |
+|  Remove at tail  |     `0(n)`    |     `0(1)`    |
+| Remove in middle |     `0(n)`    |     `0(n)`    |
+|                  |               |               |
+
+Removing at the head is constant time because again, we have a reference to it so we can just remove it and advance the head by one.
+
+However, removing from the tail is different. It takes linear time to remove elements from a singly linked list because even if we remove the tail, we have to seek through the list to find out what the new tail is. DLL however do not have this problem because they have a pointer to the previous node, so we can continually remove nodes from the tail.
+
+And finally removing somewhere in the middle is linear time because in the worst case we would need to seek through and minus one element each time which is linear.
+
+
+<br/>
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+<br/>
+
+### Doubly Linked List Source Code
+
+[Doubly Linked List in Python](./Data_Structures/Linked_List/DoublyLinkedList.py)
+
+Simply run
+
+```py
+python3 DoublyLinkedList.py
+```
+
+<br/>
+<div align="right">
+    <b><a href="#">↥ back to top</a></b>
+</div>
+<br/>
+
+These notes are compiled from the [video](https://www.youtube.com/watch?v=RBSGKlAvoiM) from [freeCodeCamp.org](https://www.freecodecamp.org), [geeksforgeeks](https://www.geeksforgeeks.org), and various other places.
