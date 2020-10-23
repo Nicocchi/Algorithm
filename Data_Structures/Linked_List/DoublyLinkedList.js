@@ -1,4 +1,13 @@
-// A linked list node
+/**
+ * This code can be used under the MIT License.
+ * Code by Nicocchi
+ */
+
+/**
+ * A linked list node
+ *
+ * @class Node
+ */
 class Node {
     // Constructor to create a new node
     constructor(data) {
@@ -8,14 +17,22 @@ class Node {
     }
 }
 
-// Class to create a  Doubly Linked List
+/**
+ * Class to create a  Doubly Linked List
+ *
+ * @class DoublyLinkedList
+ */
 class DoublyLinkedList {
     constructor() {
         this.head = null;
     }
 
-    // Given a reference to the head of a list and an
-    // integer, inserts a new node on the front of the list
+    /**
+     * Given a reference to the head of a list and an
+     * integer, inserts a new node on the front of the list
+     *
+     * @memberof DoublyLinkedList
+     */
     push = new_data => {
         // 1. Allocates node
         // 2. Put the data in it
@@ -34,8 +51,12 @@ class DoublyLinkedList {
         this.head = new_node
     }
 
-    // Given a node as prev_node, insert a new node after
-    // the given node
+    /**
+     * Given a node as prev_node, insert a new node after
+     * the given node
+     *
+     * @memberof DoublyLinkedList
+     */
     insertAfter = (prev_node, new_data) => {
         // 1. Check if the given prev_node is null
         if (prev_node === null) {
@@ -62,8 +83,12 @@ class DoublyLinkedList {
         }
     }
 
-    // Given a reference to the head of DLL and integer,
-    // appends a new node at the end
+    /**
+     * Given a reference to the head of DLL and integer,
+     * appends a new node at the end
+     *
+     * @memberof DoublyLinkedList
+     */
     append = new_data => {
         // 1. Allocates node
         // 2. Put in the data
@@ -96,6 +121,12 @@ class DoublyLinkedList {
         return;
     }
 
+    /**
+     * This function prints contents of Linked List
+     * starting from given node
+     *
+     * @memberof DoublyLinkedList
+     */
     printList = node => {
         console.log("\nTraversal in forward direction");
         let last = node;
@@ -112,6 +143,8 @@ class DoublyLinkedList {
         }
     }
 }
+
+// Test functions
 
 // Start with an empty list
 let llist = new DoublyLinkedList();
