@@ -1,5 +1,7 @@
 # Algorithm & CS Notes for Study
 
+These notes are compiled from the [video](https://www.youtube.com/watch?v=RBSGKlAvoiM) from [freeCodeCamp.org](https://www.freecodecamp.org), [geeksforgeeks](https://www.geeksforgeeks.org), and various other places.
+
 # Table of Contents
 
 <!-- TOC -->
@@ -24,6 +26,14 @@
         - [Operations on Dynamic Arrays](#operations-on-dynamic-arrays)
         - [How can we implement a dynamic array](#how-can-we-implement-a-dynamic-array)
         - [Dynamic Array Source Code](#dynamic-array-source-code)
+- [Singly and Doubly Linked Lists](#singly-and-doubly-linked-lists)
+    - [What is a linked list?](#what-is-a-linked-list)
+    - [Where are linked lists used?](#where-are-linked-lists-used)
+    - [Terminology](#terminology)
+    - [Singly vs Doubly Linked Lists](#singly-vs-doubly-linked-lists)
+    - [Pros and Cons](#pros-and-cons)
+    - [Inserting Singly Linked List](#inserting-singly-linked-list)
+    - [Inserting Doubly Linked List](#inserting-doubly-linked-list)
 <!-- /TOC -->
 
 
@@ -45,6 +55,12 @@ The interface does not give any specific details about how something should be i
 |      Vehicle      |                 Golf Card<br>Bicycle<br>Smart Car                 |
 |                   |                                                                   |
 
+
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
 
 ## Computational Complexity Analysis
 
@@ -203,6 +219,12 @@ Other classic examples of Big-0:
 * Sorting using mergesort - `0(nlog(n))`
 * Iterating over all the cells in a matrix of size n by m - `0(nm)`
 
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
+
 ## Static and Dynamic Arrays
 
 Probably the most **used** data structure. The reason the array is used so much is because it forms the fundamental building block for all other data structures. So we end up seeing it everywhere. With arrays and pointers we can construct just about any data structure.
@@ -289,6 +311,12 @@ Simply run
 ```py
 python3 DynamicArray.py
 ```
+
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
 
 ## Singly and Doubly Linked Lists
 
@@ -396,3 +424,9 @@ And the last step is to make `23`'s next pointer equal to `11`.
 This is so that we can go forwards from `23` to `11`. So in total, we changed exactly 4 pointers. If we flatten out the list, we can see that `11` has been inserted in the correct position.
 
 ![Doubly List Diagram8](./images/linked_list018.png)
+
+<br/>
+<div align="right">
+    <b><a href="#----">↥ back to top</a></b>
+</div>
+<br/>
