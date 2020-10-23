@@ -256,7 +256,7 @@ Elemetns in *A* are referenced by their index. There is no other way to access e
 
 The dynamic array can `grow` and `shrink` in size.
 
-![Dynamic Array Diagram](./images/dynamic_array001.png)
+![Dynamic Array Diagram1](./images/dynamic_array001.png)
 
 #### How can we implement a dynamic array
 
@@ -268,7 +268,7 @@ The dynamic array can `grow` and `shrink` in size.
 
 Suppose we create a dynamic array with an initial capacity of two and then begin adding elements to it.
 
-![Dynamic Array Diagram](./images/dynamic_array002.png)
+![Dynamic Array Diagram2](./images/dynamic_array002.png)
 
 `∅` is a placeholder for an empty position.
 
@@ -289,3 +289,110 @@ Simply run
 ```py
 python3 DynamicArray.py
 ```
+
+## Singly and Doubly Linked Lists
+
+### What is a linked list?
+
+A linked list is a sequential list of nodes that hold data which point to other nodes also containing data.
+
+![Linked List Diagram1](./images/linked_list001.png)
+
+### Where are linked lists used?
+
+* Used in many List, Queue & Stack implementations.
+* Great for creating circular lists.
+* Can easily model real world objects such as trains.
+* Used in separate chaining, which is present certain Hashtable implementations to deal with hashing collisions.
+* Often used in the implementation of adjacency lists for graphs.
+
+### Terminology
+
+* `Head`: The first node in a linked list
+* `Tail`: The last node in a linked list
+* `Pointer`: Reference to another node
+* `Node`: An object containing data and pointer(s)
+
+![Linked List Diagram2](./images/linked_list002.png)
+
+### Singly vs Doubly Linked Lists
+
+Singly linked lists only hold a reference to the next node. In the implementation you always maintain a reference to the `head` to the linked list and a reference to the `tail` node for quick additions/removals.
+
+![Singly List Diagram1](./images/linked_list003.png)
+
+With a doubly linked list each node holds a reference to the next and previous node. In the implementation  you always maintain a reference to the `head` and the `tail` of the doubly linked list to do quick additions/removals from both ends of your list.
+
+![Doubly List Diagram1](./images/linked_list004.png)
+
+### Pros and Cons
+
+Pros and Cons to a Singly and Doubly Linked list
+
+|                  |                    Pros                    |                  Cons                    |
+|:----------------:|:------------------------------------------:|:----------------------------------------:|
+| Singly<br>Linked | Uses less memory<br>Simpler implementation | `Cannot easily access previous elements` |
+| Doubly<br>Linked |         Can be traversed backwards         |             `Takes 2x memory`            |
+|                  |                                            |                                          |
+
+### Inserting Singly Linked List
+
+Insert 11 where the third node is.
+
+![Singly List Diagram2](./images/linked_list005.png)
+
+We first create a new pointer that points to the head. This is almost always the first step in all linked list operations.
+
+![Singly List Diagram3](./images/linked_list006.png)
+
+We are going to seek up to but not including the node we want to remove. Moving the pointer to the next node after `5`, which is `23`.
+
+![Singly List Diagram3](./images/linked_list007.png)
+
+And now we are already where we need to be to create the next node. So we create the next node, the green node, `11`. And we make `11`'s next node point to `7`
+
+![Singly List Diagram4](./images/linked_list008.png)
+
+And then we change `23`'s next pointer to be `11`.
+
+![Singly List Diagram5](./images/linked_list009.png)
+
+Remember, we have access to `23`'s next pointer because we have a reference to it with the traversing.
+
+And now we flatten out the list, and we can see we have correctly inserted 11 at the correct position.
+
+![Singly List Diagram6](./images/linked_list010.png)
+
+![Singly List Diagram7](./images/linked_list011.png)
+
+### Inserting Doubly Linked List
+
+Insert `11` where the third node is.
+
+It's a bit trickier because of all the pointers around, but it's the exact same concept as before.
+
+![Doubly List Diagram2](./images/linked_list012.png)
+
+Create a traversal pointer which points to where the head is, and advance it to where you are just before the insertion position.
+
+![Doubly List Diagram3](./images/linked_list013.png)
+
+So we are just before the node so we stop traversing. We create the new node.
+
+![Doubly List Diagram4](./images/linked_list014.png)
+
+Set `11`'s next pointer equal to `7` and also point `11`'s previous pointer to `23`.
+
+![Doubly List Diagram5](./images/linked_list015.png)
+
+Now we make `7`'s previous pointer equal to `11`. So we can go backwards from `7` to `11`.
+
+![Doubly List Diagram6](./images/linked_list016.png)
+
+And the last step is to make `23`'s next pointer equal to `11`.
+
+![Doubly List Diagram7](./images/linked_list017.png)
+
+This is so that we can go forwards from `23` to `11`. So in total, we changed exactly 4 pointers. If we flatten out the list, we can see that `11` has been inserted in the correct position.
+
+![Doubly List Diagram8](./images/linked_list018.png)
