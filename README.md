@@ -1,12 +1,41 @@
-# Abstract Data Type
+# Algorithm & CS Notes for Study
 
-## What is an Abstract Data Type?
+# Table of Contents
+
+<!-- TOC -->
+- [Abstract Data Type](#abstract-data-type)
+    - [What is an Abstract Data Type?](#what-is-an-abstract-data-type)
+    - [Examples](#examples)
+- [Computational Complexity Analysis](#computational-complexity-analysis)
+    - [Big-0 Notation](#big-0-notation)
+    - [Big-0 Properties](#big-0-properties)
+    - [Big-0 Examples](#big-0-examples)
+        - [Constant Time](#constant-time)
+        - [Linear Time](#linear-time)
+        - [Quadratic Time](#quadratic-time)
+        - [Logarithmic Time](#logarithmic-time)
+        - [More Examples](#more-examples)
+- [Static and Dynamic Arrays](#static-and-dynamic-arrays)
+    - [What is a static array?](#what-is-a-static-array)
+    - [When and where is a static Array used?](#when-and-where-is-a-static-array-used)
+    - [Complexity](#complexity)
+    - [Static Array](#static-array)
+    - [Dynamic Array](#dynamic-array)
+        - [Operations on Dynamic Arrays](#operations-on-dynamic-arrays)
+        - [How can we implement a dynamic array](#how-can-we-implement-a-dynamic-array)
+        - [Dynamic Array Source Code](#dynamic-array-source-code)
+<!-- /TOC -->
+
+
+## Abstract Data Type
+
+### What is an Abstract Data Type?
 
 An `abstract data type` (ADT) is an abstraction of a data structure which provides only the interface to which a data structure must adhere to.
 
 The interface does not give any specific details about how something should be implemented or in what programming language.
 
-## Examples
+### Examples
 
 | Abstraction (ADT) |                        Implementation (DS)                        |
 |:-----------------:|:-----------------------------------------------------------------:|
@@ -17,14 +46,14 @@ The interface does not give any specific details about how something should be i
 |                   |                                                                   |
 
 
-# Computational Complexity Analysis
+## Computational Complexity Analysis
 
 As programmers, we often find ourselves asking the same two questions over and over again:
 
 * How much `time` does this algorithm need to finish?
 * How much `space` does this algorithm need for its computation?
 
-## Big-0 Notation
+### Big-0 Notation
 
 Big-0 Notation gives an upper bound of the complexity in the `worst` case, helping to quantify performance as the input size becomes `arbitrarily large`.
 
@@ -44,7 +73,7 @@ Complexities ordered in from smallest to largest
 | Factorial Time    | `0(n!)`        |
 |                   |                |
 
-## Big-0 Properties
+### Big-0 Properties
 
 ```go
 0(n + c) = 0(n)
@@ -59,9 +88,9 @@ f(n) = 7log(n)³ + 15n² + 2n³ + 8
         0(f(n)) = 0(n³)
 ```
 
-## Big-0 Examples
+### Big-0 Examples
 
-### Constant Time
+#### Constant Time
 
 The following run in <ins>constant</ins> time: `0(1)`
 
@@ -77,7 +106,7 @@ So on the left when we are just adding or doing some mathmatical formula, yes, t
 
 And on the right, we are doing a loop, but the loop itself does not depend on `n`, so it runs also in a constant amount of time. So as our input size gets arbituary large, well that loop is still going to run in the same amount of time regardless.
 
-### Linear Time
+#### Linear Time
 
 The following run in <ins>linear</ins> time: `0(n)` with respect to the input size of `n` because we do a constant amount of work in `n` times
 
@@ -90,7 +119,7 @@ While i < n Do      While i < n Do
   0(f(n)) = 0(n)      0(f(n)) = 0(n)
 ```
 
-### Quadratic Time
+#### Quadratic Time
 
 Both of the following run in quadratic time. The first may be obvious since *n* work done *n* times is *n\*n* = `0(n²)`, but what about the second one?
 
@@ -117,7 +146,7 @@ For (i := 0 ; i < n; i = i + 1)
     For (j := i ; j < n; j = j + 1)
 ```
 
-### Logarithmic Time
+#### Logarithmic Time
 
 Suppose we have a sorted array and we want to find the index of a particular value in the array, if it exists. What is the time complexity of the following algorithm?
 
@@ -135,7 +164,7 @@ While low <= high Do
 return -1 // Value not found
 ```
 
-### More Examples
+#### More Examples
 
 ```go
 i := 0
@@ -174,11 +203,11 @@ Other classic examples of Big-0:
 * Sorting using mergesort - `0(nlog(n))`
 * Iterating over all the cells in a matrix of size n by m - `0(nm)`
 
-# Static and Dynamic Arrays
+## Static and Dynamic Arrays
 
 Probably the most **used** data structure. The reason the array is used so much is because it forms the fundamental building block for all other data structures. So we end up seeing it everywhere. With arrays and pointers we can construct just about any data structure.
 
-## What is a static array?
+### What is a static array?
 
 A static array is a fixed length container containing n elements `indexable` from the range [0, n-1].
 
@@ -188,7 +217,7 @@ A static array is a fixed length container containing n elements `indexable` fro
 
 Static arrays are given as contiguous chunks of memory. Meaning, that your chunk of memory doesn't look like a piece of Swiss cheese with a bunch of holes and gaps. It's contiguous, all the addresses are adjacent in your static array.
 
-## When and where is a static Array used?
+### When and where is a static Array used?
 
 * Storing and accessing sequential data
 * Temporarily storing objects
@@ -197,7 +226,7 @@ Static arrays are given as contiguous chunks of memory. Meaning, that your chunk
 * Can be used to return multiple values from a function
 * Used in dynamic programming to cache answers to subproblems
 
-## Complexity
+### Complexity
 
 |           | Static Array | Dynamic Array |
 |-----------|--------------|---------------|
@@ -214,22 +243,22 @@ Searching however, can take up to linear time because we potentially have to tra
 
 Inserting, appending, and deletion in a static Array really doesn't make sense. The static Array is a fixed sized container. It cannot grow larger or smaller. When inserting in a dynamic Array, this operation can cost up to linear time because you potentially have to shift all the elements to the right and recopy all the elements into the new static array. This is assuming we are implementing a dynamic Array using a static Array. Appending though, is constant. When we append elements to a dynamic Array, we have to resize the internal static Array containing all those elements. This happens so rarely that appending becomes constant time. Deletions are linear for the same reasons that insertions are linear. You have to shift all the elements over and re-potentially re-copy everything to your static Array.
 
-## Static Array
+### Static Array
 
 ![Static Array Diagram](./images/static_array001.png)
 
 Elemetns in *A* are referenced by their index. There is no other way to access elements in an array. Array indexing is zero-based, meaning the first element is found in position zero.
 
 
-## Dynamic Array
+### Dynamic Array
 
-### Operations on Dynamic Arrays
+#### Operations on Dynamic Arrays
 
 The dynamic array can `grow` and `shrink` in size.
 
 ![Dynamic Array Diagram](./images/dynamic_array001.png)
 
-### How can we implement a dynamic array
+#### How can we implement a dynamic array
 
 **A:** One way is to use a static array!
 
@@ -251,7 +280,7 @@ Suppose we create a dynamic array with an initial capacity of two and then begin
 * And lastly add `6` with no issues.
 * And still have two remaining slots left of the array.
 
-### Dynamic Array Source Code
+#### Dynamic Array Source Code
 
 [Dynamic Array in Python](./Data_Structures/Dynamic_Array/DynamicArray.py)
 
