@@ -58,7 +58,7 @@ The interface does not give any specific details about how something should be i
 
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#">↥ back to top</a></b>
 </div>
 <br/>
 
@@ -221,7 +221,7 @@ Other classic examples of Big-0:
 
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#">↥ back to top</a></b>
 </div>
 <br/>
 
@@ -314,7 +314,7 @@ python3 DynamicArray.py
 
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#">↥ back to top</a></b>
 </div>
 <br/>
 
@@ -427,6 +427,6 @@ This is so that we can go forwards from `23` to `11`. So in total, we changed ex
 
 <br/>
 <div align="right">
-    <b><a href="#----">↥ back to top</a></b>
+    <b><a href="#">↥ back to top</a></b>
 </div>
 <br/>
