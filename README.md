@@ -254,3 +254,9 @@ Suppose we create a dynamic array with an initial capacity of two and then begin
 ### Dynamic Array Source Code
 
 [Dynamic Array in Python](./Data_Structures/Dynamic_Array/DynamicArray.py)
+
+Simply run
+
+```py
+python3 DynamicArray.py
+```
