@@ -1,3 +1,5 @@
+# This code is contributed by Nikhil Kumar Singh(nickzuck_007) 
+
 # A linked list node
 class Node:
     # Constructor to create a new node
@@ -27,7 +29,7 @@ class DoublyLinkedList:
         if self.head is not None:
             self.head.prev = new_node
         
-        # 5. Move the head to poitn to the new node
+        # 5. Move the head to point to the new node
         self.head = new_node
     
     # Given a node as prev_node, insert a new node after

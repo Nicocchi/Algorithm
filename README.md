@@ -552,10 +552,13 @@ And finally removing somewhere in the middle is linear time because in the worst
 
 [Doubly Linked List in Python](./Data_Structures/Linked_List/DoublyLinkedList.py)
 
+[Doubly Linked List in JavaScript](./Data_Structures/Linked_List/DoublyLinkedList.js)
+
 Simply run
 
 ```py
 python3 DoublyLinkedList.py
+node DoublyLinkedList.js
 ```
 
 <br/>
